@@ -45,9 +45,17 @@ header {
 
 nav {
     flex-grow: 1;
+    margin: 0 15px;
+}
+
+nav .nav-wrapper {
     display: flex;
     justify-content: space-between;
-    margin: 0 15px;
+}
+
+nav .hamburger {
+    display: none;
+    text-align: end;
 }
 
 .btn {
@@ -230,12 +238,15 @@ p.secondary-heading-paragraph {
     flex-flow: row nowrap;
     justify-content: space-evenly;
     width: 80%;
+    margin: 0 auto;
     align-items: baseline;
     align-content: space-around;
 }
 
 .service-card {
     height: 250px;
+    margin: 20px;
+    min-width: 33%;
 }
 
 .service-card * {
@@ -340,4 +351,52 @@ p.secondary-heading-paragraph {
 
 .image-card:hover, .image-card:focus {
     background-size: 110% 110%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .carosel {
+        justify-content: start;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    #left-nav {
+        display: none;
+    }
+
+    nav .nav-wrapper {
+        justify-content: flex-end;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #services {
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: space-between;
+        height: 920px;
+    }
+
+
+    nav .nav-wrapper {
+        display: none;
+    }
+    nav .hamburger {
+        display: block;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    #search-section {
+        border-radius: 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #search-box form {
+        width: 80%;
+        margin: auto;
+    }
 }
